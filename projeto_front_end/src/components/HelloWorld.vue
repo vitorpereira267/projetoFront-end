@@ -1,12 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <input type="text" v-model="pesquisa">
-    <button @click="carregaInfo">Pesquisar</button>
-    <div v-for="(item, index) in resultados" :key="index">
-        <h3>{{item.data[0].title}}</h3>
-        <img :src="item.links[0].href" alt="">
-        <p>{{item.data[0].description}}</p>
+    <div v-for="(data, index) in resultados" :key="index">
+        <hr>
+        <h3>{{data.name}}</h3>
+        <img :src="data.img_url" alt="">
+        
     </div>
   </div>
 </template>
@@ -26,13 +25,16 @@ export default {
   },
   methods:{
     carregaInfo(){
-      axios.get('https://images-api.nasa.gov/search?q=earth&media_type=image')
+      axios.get('https://finalspaceapi.com/api/v0/character') //https://finalspaceapi.com/api/v0/
           .then(
             res => {
-              this.resultados = res.data.collection.items
+              this.resultados = res.data
             }
           )
     }
+  },
+  mounted(){
+    this.carregaInfo();
   }
 }
 </script>
