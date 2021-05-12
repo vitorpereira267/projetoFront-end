@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Personagens from '../views/Personagens.vue'
 import Episodios from '../views/Episodios'
+import Episodio from '../views/Episodio'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/episodios',
     component: Episodios
+  },
+  {
+    path: '/episodios/:id',
+    component: Episodio
   },
   {
     path: '/personagens',
