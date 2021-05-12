@@ -7,7 +7,7 @@
         
         <h3>{{data.name}}</h3>
         <div class="space">
-        <img :src="data.img_url" alt="">
+        <img @click="methods" :src="data.img_url" alt="">
         </div>
         
     </div>
@@ -24,7 +24,7 @@ export default {
   data(){
     return{
       	resultados:"",
-        pesquisa:""
+        image:true
     }
   },
   methods:{
