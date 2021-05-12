@@ -29,7 +29,7 @@ export default {
   },
   methods:{
     carregaInfo(){
-      axios.get('https://finalspaceapi.com/api/v0/character') //https://finalspaceapi.com/api/v0/
+      axios.get('https://finalspaceapi.com/api/v0/episode') //https://finalspaceapi.com/api/v0/
           .then(
             res => {
               this.resultados = res.data
@@ -61,8 +61,8 @@ a {
 }
 
 .hello{
-  display: flex;
-  flex-flow: row wrap;
+  
+  
   background-color: #5F9EA0;
 }
 .space{
