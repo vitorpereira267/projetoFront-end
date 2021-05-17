@@ -7,8 +7,9 @@
         
         <h3>{{data.name}}</h3>
         <div class="space">
-        <img @click="methods" :src="data.img_url" alt="">
+        <img @click="navega(data.id)" :src="data.img_url" alt="">
         </div>
+        <h3>RELEASE DATE: {{data.air_date}}</h3>
         
     </div>
   </div>
@@ -29,14 +30,18 @@ export default {
   },
   methods:{
     carregaInfo(){
-      axios.get('https://finalspaceapi.com/api/v0/episode') //https://finalspaceapi.com/api/v0/
+      axios.get('https://finalspaceapi.com/api/v0/episode/') //https://finalspaceapi.com/api/v0/
           .then(
             res => {
               this.resultados = res.data
             }
           )
-    }
+    },
+    navega(id){
+    this.$router.push({ path: `/episodio/${id}` })
+  }
   },
+    
   mounted(){
     this.carregaInfo();
   }

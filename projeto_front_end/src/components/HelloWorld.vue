@@ -1,16 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div v-for="(data, index) in resultados" :key="index">
-      <br>
-        <hr>
-        
-        <h3>{{data.name}}</h3>
-        <div class="space">
-        <img :src="data.img_url" alt="">
-        </div>
-        
-    </div>
+  <div class="hello" style="width:100%; height: 100vh">
+    
   </div>
 </template>
 
@@ -61,9 +51,11 @@ a {
 }
 
 .hello{
-  display: flex;
-  flex-flow: row wrap;
-  background-color: #5F9EA0;
+  background-image: url("https://images6.alphacoders.com/108/thumb-1920-1081312.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 .space{
   display: inline-block;

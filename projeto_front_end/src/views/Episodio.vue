@@ -1,17 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <div v-for="(data, index) in resultados" :key="index">
-      <br>
-        <hr>
-        
-        <h3>{{data.name}}</h3>
-        <div class="space">
-        <img @click="methods" :src="data.img_url" alt="">
+    <br>
+      <h3>Characters From {{resultados.name}}</h3>
+        <div v-for="(data, index) in characters" :key="index">
+          <br>
+          
+            <h3>{{data.name}}</h3>
+            <div class="space">
+              <img :src="data.img_url" alt="">
+            </div>
         </div>
         
+        
+        
+        
+        
     </div>
-  </div>
+  
 </template>
 
 <script>
@@ -24,21 +30,37 @@ export default {
   data(){
     return{
       	resultados:"",
+        characters: []
         
     }
   },
   methods:{
-    carregaInfo(){
-      axios.get('https://finalspaceapi.com/api/v0/episode' + id) //https://finalspaceapi.com/api/v0/
+    carregaInfo(id){
+      axios.get('https://finalspaceapi.com/api/v0/episode/' + id) //https://finalspaceapi.com/api/v0/
           .then(
             res => {
               this.resultados = res.data
+              console.log(this.resultados)
+              for (let i = 0; i < this.resultados.characters.length; i++) {
+                 axios.get(this.resultados.characters[i])
+                    .then(
+                      res => {
+                          this.characters.push(res.data);
+                          
+                      }
+                    )
+                
+              }
+              
             }
           )
     }
   },
+
+
+  
   mounted(){
-    this.carregaInfo();
+    this.carregaInfo(this.$route.params.id);
   }
 }
 </script>
@@ -61,7 +83,6 @@ a {
 }
 
 .hello{
-  
   
   background-color: #5F9EA0;
 }

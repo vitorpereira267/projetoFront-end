@@ -18,7 +18,7 @@ const routes = [
     component: Episodios
   },
   {
-    path: '/episodios/:id',
+    path: '/episodio/:id',
     component: Episodio
   },
   {
