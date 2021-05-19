@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Personagens from '../views/Personagens.vue'
 import Episodios from '../views/Episodios'
 import Episodio from '../views/Episodio'
+import Personagem from '../views/Personagem.vue'
 
 Vue.use(VueRouter)
 
@@ -25,6 +26,11 @@ const routes = [
     path: '/personagens',
     component: Personagens
   },
+  {
+    path: '/personagem',
+    component: Personagem
+  },
+  
   
   
 ]
