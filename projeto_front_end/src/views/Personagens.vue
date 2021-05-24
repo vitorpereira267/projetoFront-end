@@ -8,6 +8,7 @@
         <h3>{{data.name}}</h3>
         <div class="space">
         <img @click="navega(index+1)" :src="data.img_url" alt="">
+        
         </div>
         
     </div>
@@ -31,7 +32,7 @@ export default {
   //https://finalspaceapi.com/api/v0/character
   methods: {
     carregaInfo() {
-      axios.get('https://finalspaceapi.com/api/v0/character').then((res) => {
+      axios.get('https://finalspaceapi.com/api/v0/character').then((res) => { // https://blog.logrocket.com/full-guide-to-using-font-awesome-icons-in-vue-js-apps-5574c74d9b2d/
         console.log(res.data);
         this.resultados = res.data;
       });
