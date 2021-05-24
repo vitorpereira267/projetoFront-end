@@ -1,13 +1,13 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    
     <div v-for="(data, index) in resultados" :key="index">
       <br>
         <hr>
         
         <h3>{{data.name}}</h3>
         <div class="space">
-        <img :src="data.img_url" alt="">
+        <img @click="navega(index+1)" :src="data.img_url" alt="">
         </div>
         
     </div>
@@ -27,20 +27,23 @@ export default {
         pesquisa:""
     }
   },
-  methods:{
-    carregaInfo(){
-      axios.get('https://finalspaceapi.com/api/v0/character') //https://finalspaceapi.com/api/v0/
-          .then(
-            res => {
-              this.resultados = res.data
-            }
-          )
-    }
+
+  //https://finalspaceapi.com/api/v0/character
+  methods: {
+    carregaInfo() {
+      axios.get('https://finalspaceapi.com/api/v0/character').then((res) => {
+        console.log(res.data);
+        this.resultados = res.data;
+      });
+    },
+    navega(personagem){
+      this.$router.push('/personagens/'+personagem)
+    },
   },
-  mounted(){
+  mounted() {
     this.carregaInfo();
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

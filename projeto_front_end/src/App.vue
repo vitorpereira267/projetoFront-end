@@ -6,7 +6,8 @@
       <div>
       <router-link to="/">Home</router-link>  |
       <router-link to="/personagens">Characters</router-link>  |
-      <router-link to="/episodios">Episodes</router-link>  
+      <router-link to="/episodios">Episodes</router-link> |
+      <router-link to="/favoritos">Favorites</router-link> 
       </div>
       
       
@@ -25,7 +26,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  background-color:  #191970;
+  background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg");
 }
 
 #nav {

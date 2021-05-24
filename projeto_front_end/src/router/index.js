@@ -5,6 +5,7 @@ import Personagens from '../views/Personagens.vue'
 import Episodios from '../views/Episodios'
 import Episodio from '../views/Episodio'
 import Personagem from '../views/Personagem.vue'
+import Favoritos from '../views/Favoritos.vue'
 
 Vue.use(VueRouter)
 
@@ -27,9 +28,14 @@ const routes = [
     component: Personagens
   },
   {
-    path: '/personagem',
+    path: '/personagens/:id',
     component: Personagem
   },
+  {
+    path: '/favoritos',
+    component: Favoritos
+  },
+  
   
   
   

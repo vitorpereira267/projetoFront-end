@@ -1,66 +1,47 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <br>
-      <h3>Characters From {{resultados.name}}</h3>
-        <div v-for="(data, index) in characters" :key="index">
-          <br>
-          
-            <h3>{{data.name}}</h3>
-            <div class="space">
-              <img :src="data.img_url" alt="">
-            </div>
-        </div>
-        
-        
-        
-        
-        
+  <div class="hello" >
+      <h3 >Name: {{ resultados.name }}</h3>
+      <br>
+      <img :src="resultados.img_url" alt=""  />
+      <h3 >Specie: {{ resultados.species }}</h3>
+      <h3 >Status: {{ resultados.status}}</h3>
+      <h3 >Origin: {{ resultados.origin }}</h3>
+     
+      
+      
+      
+      
+
     </div>
-  
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
-  name: 'HelloWorld',
+  name: "Api",
   props: {
-    msg: String
+    msg: String,
   },
-  data(){
-    return{
-      	resultados:"",
-        characters: []
-        
-    }
+  data() {
+    return {
+      resultados: "",
+    };
   },
-  methods:{
-    carregaInfo(id){
-      axios.get('https://finalspaceapi.com/api/v0/episode/' + id) //https://finalspaceapi.com/api/v0/
-          .then(
-            res => {
-              this.resultados = res.data
-              console.log(this.resultados)
-              for (let i = 0; i < this.resultados.characters.length; i++) {
-                 axios.get(this.resultados.characters[i])
-                    .then(
-                      res => {
-                          this.characters.push(res.data);
-                          
-                      }
-                    )
-              }
-            }
-          )
-    }
+  methods: {
+    carregaInfo(query) {
+      axios.get('https://finalspaceapi.com/api/v0/character/'+query).then((res) => {
+         console.log(res.data);
+        this.resultados = res.data;
+      });
+    },
   },
-
-
-  
+  // mounted() {
+  //   this.carregaInfo();
+  // },
   mounted(){
-    this.carregaInfo(this.$route.params.id);
+      this.carregaInfo(this.$route.params.id)
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -81,6 +62,7 @@ a {
 }
 
 .hello{
+  
   
   background-color: #5F9EA0;
 }

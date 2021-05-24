@@ -1,8 +1,13 @@
 <template>
+
+      
   <div class="hello">
+    
+      <h3>Characters From {{resultados.name}}</h3>
+      
     <h1>{{ msg }}</h1>
     <br>
-      <h3>Characters From {{resultados.name}}</h3>
+      
         <div v-for="(data, index) in characters" :key="index">
           <br>
           
@@ -67,6 +72,7 @@ export default {
 <style scoped>
 h3 {
   margin: 40px 0 0;
+  
 }
 ul {
   list-style-type: none;
@@ -80,8 +86,10 @@ a {
   color: #42b983;
 }
 
+
 .hello{
-  
+  display: flex;
+  flex-flow: row wrap;
   background-color: #5F9EA0;
 }
 .space{
