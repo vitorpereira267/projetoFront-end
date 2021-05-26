@@ -20,7 +20,7 @@
 
 <style>
 #app {
-  font-family: Blippo, fantasy;
+  font-family: cursive;
   font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
