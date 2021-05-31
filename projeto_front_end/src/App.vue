@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" >
     
     <div id="nav">
       <router-link to="/"><img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Final_Space_Logo.png" alt=""></router-link> 
@@ -7,7 +7,8 @@
       <router-link to="/">Home</router-link>  |
       <router-link to="/personagens">Characters</router-link>  |
       <router-link to="/episodios">Episodes</router-link> |
-      <router-link to="/favoritos">Favorites</router-link> 
+      <router-link to="/favoritos">Favorites</router-link> |
+      <router-link to="/login" ><strong>Login</strong></router-link>
       </div>
       
       
@@ -19,14 +20,26 @@
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 #app {
-  font-family: cursive;
+  /* font-family: cursive;
   font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: white;
-  background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg");
+  background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg"); */
+}
+body{
+  margin:0;
+  background-image: url('https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg');
+  font-family: 'Bebas Neue', cursive;
+  font-size: 32px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  
+
 }
 
 #nav {
@@ -34,6 +47,10 @@
   display:flex;
   justify-content: space-between;
   align-items: center;
+
+  text-align: center;
+  color: white;
+  background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg");
 }
 
 #nav a {

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    
     <div v-for="(data, index) in resultados" :key="index">
       <br>
         <hr>
@@ -66,9 +66,11 @@ a {
 }
 
 .hello{
+  width: 100%;
+  height: 100%;
+  text-align: center;
   
   
-  background-color: #5F9EA0;
 }
 .space{
   display: inline-block;

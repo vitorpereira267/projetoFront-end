@@ -6,6 +6,9 @@ import Episodios from '../views/Episodios'
 import Episodio from '../views/Episodio'
 import Personagem from '../views/Personagem.vue'
 import Favoritos from '../views/Favoritos.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import Erro from '../views/Error.vue'
 
 Vue.use(VueRouter)
 
@@ -34,6 +37,18 @@ const routes = [
   {
     path: '/favoritos',
     component: Favoritos
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  {
+    path: '/register',
+    component: Register
+  },
+  {
+    path: '/error',
+    component: Erro
   },
   
   

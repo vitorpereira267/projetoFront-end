@@ -1,9 +1,10 @@
 <template>
-
+  <div style="text-align:center;">
+      <h3>Characters From {{resultados.name}}</h3>
       
   <div class="hello">
     
-      <h3>Characters From {{resultados.name}}</h3>
+      
       
     <h1>{{ msg }}</h1>
     <br>
@@ -22,7 +23,7 @@
         
         
     </div>
-  
+  </div>
 </template>
 
 <script>
@@ -90,7 +91,7 @@ a {
 .hello{
   display: flex;
   flex-flow: row wrap;
-  background-color: #5F9EA0;
+  
 }
 .space{
   display: inline-block;

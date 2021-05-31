@@ -1,8 +1,11 @@
 <template>
   <div class="hello" >
-      <h3 >Name: {{ resultados.name }}</h3>
+
+      <h3 > {{ resultados.name }}</h3>
       <br>
+      <div class="space">
       <img :src="resultados.img_url" alt=""  />
+      </div>
       <h3 >Specie: {{ resultados.species }}</h3>
       <h3 >Status: {{ resultados.status}}</h3>
       <h3 >Origin: {{ resultados.origin }}</h3>
@@ -62,14 +65,16 @@ a {
 }
 
 .hello{
+  width: 100%;
+  height: 100%;
+  text-align: center;
   
   
-  background-color: #5F9EA0;
 }
 .space{
   display: inline-block;
   margin: 5px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0, 0, 0.25);
+  box-shadow: 10px 10px 5px 0px rgba(0,0, 0, 0.25)
 }
 
 </style>

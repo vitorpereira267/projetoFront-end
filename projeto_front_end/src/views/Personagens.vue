@@ -7,23 +7,7 @@
         
         <h3>{{data.name}}</h3>
 
-		div(
-			v-for="image in images"
-			:key="image.id"
-			@mouseover="hovered = image.id"
-			@mouseleave="hovered = null"
-			).image
-			transition(name="fade")
-				div(v-if="hovered === image.id").overlay
-					div(
-						v-if="isStarred(image.id)"
-						@click="starToggle(image.id)"
-						).icon.icon-liked &#9733;
-					div(
-						v-else
-						@click="starToggle(image.id)"
-						).icon.icon-unliked &#9734;
-			img(:src="image.path")<div class="space">
+		<div class="space">
         <img @click="navega(index+1)" :src="data.img_url" alt="">
         
         </div>
@@ -85,7 +69,7 @@ a {
 .hello{
   display: flex;
   flex-flow: row wrap;
-  background-color: #5F9EA0;
+ 
 }
 .space{
   display: inline-block;
