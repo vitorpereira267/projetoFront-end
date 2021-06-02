@@ -5,7 +5,8 @@
       <br>
         <hr>
         
-        <h3>{{data.name}}</h3>
+        <h3>{{data.name}} <i class="far fa-heart"></i>&emsp; <button @click="markedFavorites(data)">&#9829;</button></h3> 
+        
 
 		<div class="space">
         <img @click="navega(index+1)" :src="data.img_url" alt="">

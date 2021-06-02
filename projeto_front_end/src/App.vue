@@ -4,6 +4,7 @@
     <div id="nav">
       <router-link to="/"><img src="https://upload.wikimedia.org/wikipedia/en/7/7c/Final_Space_Logo.png" alt=""></router-link> 
       <div>
+       <!-- <i class="far fa-heart"></i>  -->
       <router-link to="/">Home</router-link>  |
       <router-link to="/personagens">Characters</router-link>  |
       <router-link to="/episodios">Episodes</router-link> |
@@ -21,6 +22,10 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* .far{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+} */
 #app {
   /* font-family: cursive;
   font-size: 24px;

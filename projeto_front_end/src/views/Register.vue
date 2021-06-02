@@ -1,6 +1,6 @@
 <template>
   <div class="form">
-      <h3> LOGIN </h3>
+      <h3> REGISTER </h3>
       <form @submit.prevent="submit">
           <span>Email: </span>
           <input type="email" v-model='email'>
@@ -8,6 +8,7 @@
           <span>Password: </span>
           <input type="password" v-model='password'>
           <br>
+          
           <button type="submit">Send</button>
       </form>
   </div>
@@ -24,13 +25,16 @@ export default {
     },
     methods:{
         submit(){
-            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB_OyO2NisQcW_NfsYHHRIUHJz2ATZOv2Q', {
+            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB_OyO2NisQcW_NfsYHHRIUHJz2ATZOv2Q', {
                 email: this.email,
                 password: this.password,
                 returnSecureToken: true
             })
             .then(
-                res => console.log(res)
+                res => {
+                    console.log(res)
+                    this.$router.push('/login') 
+                }
             )
             .catch(
                 res => console.log(res)

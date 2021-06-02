@@ -8,7 +8,13 @@
           <span>Password: </span>
           <input type="password" v-model='password'>
           <br>
+        
           <button type="submit">Send</button>
+           <div style="text-align:end;">
+          <a href="/register">Create account here</a>
+           </div>
+          
+          
       </form>
   </div>
 </template>
@@ -24,13 +30,16 @@ export default {
     },
     methods:{
         submit(){
-            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB_OyO2NisQcW_NfsYHHRIUHJz2ATZOv2Q', {
+            axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB_OyO2NisQcW_NfsYHHRIUHJz2ATZOv2Q', {
                 email: this.email,
                 password: this.password,
                 returnSecureToken: true
             })
             .then(
-                res => console.log(res)
+                res => {
+                    //$this.store.commit('setUser', res.data)
+                    this.$router.push('/')
+                }
             )
             .catch(
                 res => console.log(res)
@@ -47,5 +56,6 @@ export default {
     align-items: center;
     flex-direction: center;
     flex-direction: column;
+    
 }
 </style>
