@@ -6,6 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     info:[],
+    characters:[],
     favorites:[],
     user:null
   },
@@ -17,7 +18,7 @@ export default new Vuex.Store({
       state.favorites = [item, ...state.favorites]
       localStorage.setItem('favoriteLocal', JSON.stringify(state.favorites))
     },
-    unmarkFavorites(state, index){
+    unmarkedFavorites(state, index){
       state.favorites.splice(index,1)
       localStorage.setItem('favoriteLocal', JSON.stringify(state.favoritos))
     }
@@ -25,5 +26,10 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+  },
+  getters: {
+    characters : state => {
+      return [...new Set(state)]
+    }
   }
 })

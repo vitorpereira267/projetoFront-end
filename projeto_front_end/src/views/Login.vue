@@ -56,6 +56,5 @@ export default {
     align-items: center;
     flex-direction: center;
     flex-direction: column;
-    
 }
 </style>

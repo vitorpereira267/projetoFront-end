@@ -2,10 +2,9 @@
   <div class="hello">
     
     <div v-for="(data, index) in resultados" :key="index">
-      <br>
         <hr>
         
-        <h3>{{data.name}} <i class="far fa-heart"></i>&emsp; <button @click="markedFavorites(data)">&#9829;</button></h3> 
+        <h3>{{data.name}} <i class="fas fa-heart"></i>&emsp; <button @click="markedFavorites(data)">&#9829;</button></h3> 
         
 
 		<div class="space">
@@ -28,12 +27,20 @@ export default {
   data(){
     return{
       	resultados:"",
-        pesquisa:""
+        pesquisa:"",
+        favorites:[]
     }
   },
 
   //https://finalspaceapi.com/api/v0/character
   methods: {
+    markedFavorites(data){
+      //this.$store.commit('markedFavorites',data)
+      if(!!!this.$store.state.favorites.find((res) => res === data)){
+        this.$store.commit('markedFavorites',data)
+      }
+    },
+    
     carregaInfo() {
       axios.get('https://finalspaceapi.com/api/v0/character').then((res) => { // https://blog.logrocket.com/full-guide-to-using-font-awesome-icons-in-vue-js-apps-5574c74d9b2d/
         console.log(res.data);
@@ -52,6 +59,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css');
 h3 {
   margin: 40px 0 0;
 }
