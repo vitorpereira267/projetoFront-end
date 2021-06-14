@@ -6,9 +6,8 @@
       <div>
        <!-- <i class="far fa-heart"></i>  -->
       <router-link to="/">Home</router-link>  |
-      <router-link to="/personagens">Characters</router-link>  |
-      <router-link to="/episodios">Episodes</router-link> |
-      <router-link to="/favoritos">Favorites</router-link> |
+      <router-link to="/personagens">Games</router-link>  |
+      <router-link to="/episodios">Contactos</router-link> |
       <router-link to="/login" ><strong>Login</strong></router-link>
       </div>
       
@@ -37,9 +36,10 @@
 }*/
 body{
   margin:0;
-  background-image: url('https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg');
-  /* font-family: 'Bebas Neue', cursive; */
-  font-family: arial;
+  /* background-image: url('https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg'); */
+  background-color: aquamarine;
+  font-family: 'Bebas Neue', cursive; 
+  
   font-weight: 100;
   font-size: 32px;
   -webkit-font-smoothing: antialiased;

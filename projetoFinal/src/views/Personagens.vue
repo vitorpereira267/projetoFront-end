@@ -1,20 +1,27 @@
 <template>
+
+
+<div class="box">
   <div class="hello">
     
     <div v-for="(data, index) in resultados" :key="index">
-        <hr>
         
-        <h3>{{data.name}} <i class="fas fa-heart"></i>&emsp; <button @click="markedFavorites(data)">&#9829;</button></h3> 
+        <div class="space">
+        <h3>{{data.name}} </h3> 
         
+          
 
-		<div class="space">
-        <img @click="navega(index+1)" :src="data.img_url" alt="">
+
+        <img @click="navega(index+1)" :src="data.img_url" alt=""> 
         
+        <p style="display: flex; justify-content: center;">30€</p>
+        
+        &emsp; <button @click="markedFavorites(data)">&#9829;</button>
         </div>
-        
     </div>
+    
   </div>
-  
+  </div>
 </template>
 
 <script>
@@ -62,6 +69,9 @@ export default {
 @import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css');
 h3 {
   margin: 40px 0 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 ul {
   list-style-type: none;
@@ -78,18 +88,24 @@ a {
 .hello{
   display: flex;
   flex-flow: row wrap;
- 
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .space{
   display: inline-block;
   margin: 5px;
-  box-shadow: 10px 10px 5px 0px rgba(0,0, 0, 0.25);
-  
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  width: 300px;
+}
+.box{
   
 }
 #img{
   width: 100%;
-  height: auto;
+  height: 250px;
+  width: 250px;
   transition: .5s ease;
   backface-visibility: hidden;
 

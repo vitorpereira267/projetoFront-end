@@ -9,6 +9,10 @@ import Favoritos from '../views/Favoritos.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import Erro from '../views/Error.vue'
+import Games from '../views/Games.vue'
+import Steam from '../views/Steam.vue'
+import Uplay from '../views/Uplay.vue'
+import Origin from '../views/Origin.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +41,22 @@ const routes = [
   {
     path: '/favoritos',
     component: Favoritos
+  },
+  {
+    path: '/games',
+    component: Games
+  },
+  {
+    path: '/steam',
+    component: Steam
+  },
+  {
+    path: '/uplay',
+    component: Uplay
+  },
+  {
+    path: '/origin',
+    component: Origin
   },
   {
     path: '/login',
