@@ -1,9 +1,11 @@
 <template>
-  <div class="box">
-    <div class="hello">
+  <div class="background-staff ">
+    
+    <div class="box">
       <div v-for="(data, index) in resultados" :key="index">
-        <div class="space">
+        <div class="card">
           <h3>{{ data.name }}</h3>
+           
 
           <img @click="navega(index + 1)" :src="data.img_url" alt="" />
 
@@ -65,6 +67,7 @@ h3 {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  color: #777;
 }
 ul {
   list-style-type: none;
@@ -77,32 +80,43 @@ li {
 a {
   color: #42b983;
 }
+p {
+  color: black;
+}
 
-.hello {
-  display: flex;
-  flex-flow: row wrap;
-  border: 2px #78c9a9 solid;
-  border-radius: 5px;
-  padding-top: 100px;
-  
-  
-  
-}
-.space {
-  display: inline-block;
-  margin: 5px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
-  width: 300px;
-  border: 2px #78c9a9 solid;
-  border-radius: 5px;
-  padding-left: 10px;
-}
-.box {
+.background-staff {
   padding-left: 300px;
   padding-right: 300px;
-  padding-top: 50px;
   padding-bottom: 50px;
+  
+  
 }
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px black solid;
+  border-radius: 8px;
+  padding-top: 100px;
+  background: #eee;
+   
+  
+  
+}
+.card {
+    color: #777;
+    font-size: 13px;
+    margin-top: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin: 10px;
+  
+  
+}
+
+
+
 #img {
   width: 100%;
   height: 250px;

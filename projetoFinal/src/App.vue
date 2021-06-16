@@ -12,9 +12,9 @@
       </div>
       
       
-      
     </div>
     
+      
     <router-view/>
   </div>
 </template>
@@ -37,14 +37,14 @@
 body{
   margin:0;
   /* background-image: url('https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg'); */
-  background-color: aquamarine;
-  font-family: 'Bebas Neue', cursive; 
+  
+  font-family: proximanova,arial,sans-serif;
   
   font-weight: 100;
   font-size: 32px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: white;
+  
   
 
 }
@@ -57,7 +57,7 @@ body{
 
   text-align: center;
   color: white;
-  background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg");
+  /* background-image:  url("https://i.pinimg.com/originals/f6/20/a1/f620a179ca1acfd15a0754701677fb58.jpg"); */
 }
 
 #nav a {
@@ -73,4 +73,8 @@ body{
   color: #42b983;
 }
 
+#app{
+background: linear-gradient(to bottom, #004351 0px, transparent 150px), url(https://s3.gaming-cdn.com/images/products/6690/background/6690.jpg) center 0px no-repeat #004351;
+  background-attachment: fixed;
+}
 </style>

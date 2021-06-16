@@ -3,7 +3,7 @@
     
     <div v-for="(data, index) in resultados" :key="index">
       <br>
-        <hr>
+      
         
         <h3>{{data.name}}</h3>
         <div class="space">
