@@ -41,7 +41,7 @@ body{
   font-family: proximanova,arial,sans-serif;
   
   font-weight: 100;
-  font-size: 32px;
+  font-size: 13px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   

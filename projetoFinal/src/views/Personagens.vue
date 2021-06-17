@@ -68,6 +68,7 @@ h3 {
   overflow: hidden;
   white-space: nowrap;
   color: #777;
+  font-size: 13px;
 }
 ul {
   list-style-type: none;
@@ -111,7 +112,7 @@ p {
     text-overflow: ellipsis;
     text-align: center;
     margin: 10px;
-  
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   
 }
 
@@ -123,6 +124,7 @@ p {
   width: 250px;
   transition: 0.5s ease;
   backface-visibility: hidden;
+  
 }
 </style>
 
